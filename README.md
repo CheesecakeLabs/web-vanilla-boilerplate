@@ -54,7 +54,9 @@ There's some NPM scripts already included:
 ## Custom configurations
 
 ### **Include HTML files**
-There's a custom script inside the `app.js` file that include and inject HTML files into the main HTML structures. You can use it to include your *header* or *footer* into your HTML files without the need of copy and paste the source code into each file you need to include it.
+**WARNING: This requires the jQuery dependency installation**
+
+There's a commented custom script inside the `app.js` file that include and inject HTML files into the main HTML structures. You can use it to include your *header* or *footer* into your HTML files without the need of copy and paste the source code into each file you need to include it.
 
 Usage: 
 
@@ -88,12 +90,16 @@ yarn -i
 yarn dev
 ```
 
+## TODO
+
+- [ ] Rewrite include script to remove jQuery dependency
+- [ ] Add usage instructions to all libraries and tools
 
 ## Contributors
 
-DouglasGimli (@douglasgimli)
+DouglasGimli [@douglasgimli](https://github.com/douglasgimli)
 
-Danilo Woznica (@danilowoz)
+Danilo Woznica [@danilowoz](https://github.com/danilowoz/)
 
 
 ## License

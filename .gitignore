@@ -57,6 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# os temp fiels
+.DS_Store
+
 # build files
 static/
 

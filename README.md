@@ -93,8 +93,9 @@ yarn dev
 
 DouglasGimli (@douglasgimli)
 
-Danilow (@danilow)
+Danilo Woznica (@danilowoz)
 
 
 ## License
 
+MIT

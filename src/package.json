@@ -8,24 +8,32 @@
     "build": "webpack --colors --config webpack.config.production.js --hide-modules",
     "server": "npm run build & http-server ../public/ -o",
     "deploy": "npm run build && npm run gh-pages",
-    "gh-pages": "npm run gh-delete && git checkout --orphan gh-pages && npm run gh-add-public && git commit -am \"Rebuild website\" && git push origin gh-pages && git checkout master",
-    "gh-add-public": "rm -rf ../.gitignore && git reset && echo 'src/' >> ../.gitignore && git add ../.gitignore && git add ../public/ && git clean -fd ../ && mv ../public/* .. && git add .. ",
-    "gh-delete": "if [[ `git branch --list gh-pages ` ]]; then git branch -D gh-pages; fi && if [[ `git branch --list -r origin/gh-pages ` ]]; then git push origin :gh-pages; fi;"
+    "gh-pages":
+      "npm run gh-delete && git checkout --orphan gh-pages && npm run gh-add-public && git commit -am \"Rebuild website\" && git push origin gh-pages && git checkout master",
+    "gh-add-public":
+      "rm -rf ../.gitignore && git reset && echo 'src/' >> ../.gitignore && git add ../.gitignore && git add ../public/ && git clean -fd ../ && mv ../public/* .. && git add .. ",
+    "gh-delete":
+      "if [[ `git branch --list gh-pages ` ]]; then git branch -D gh-pages; fi && if [[ `git branch --list -r origin/gh-pages ` ]]; then git push origin :gh-pages; fi;"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lost": "^8.2.0",
+    "normalize.css": "^7.0.0",
+    "reset.css": "^2.0.2"
+  },
+  "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^0.28.4",
+    "eslint-config-cheesecakelabs": "^1.0.2",
+    "extract-text-webpack-plugin": "^3.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "http-server": "^0.10.0",
     "image-webpack-loader": "^3.3.1",
-    "lost": "^8.2.0",
-    "normalize.css": "^7.0.0",
     "postcss": "^6.0.8",
     "postcss-at-rules-variables": "^0.1.1",
     "postcss-color-function": "^4.0.0",
@@ -39,14 +47,8 @@
     "postcss-mixins": "^6.0.1",
     "postcss-nested": "^2.1.0",
     "prettier": "^1.7.0",
-    "reset.css": "^2.0.2",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.5.5"
-  },
-  "devDependencies": {
-    "eslint-config-cheesecakelabs": "^1.0.2",
-    "extract-text-webpack-plugin": "^3.0.0",
     "raw-loader": "^0.5.1",
+    "style-loader": "^0.18.2",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1"
   }
